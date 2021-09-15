@@ -6,9 +6,6 @@ import cv2
 
 from PIL import Image
 
-# gray scale level values from:
-# http://paulbourke.net/dataformats/asciiart/
-
 # 70 levels of gray
 gscale1 = "$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\|()1{}[]?-_+~<>i!lI;:,\"^`'. "
 
@@ -93,8 +90,8 @@ def convertImageToAscii(frame, cols, scale, moreLevels):
 
 			# append ascii char to string
 			pixel = img.getpixel((w/2,h/2))
-			numval = int((pixel[0] + pixel[1] + pixel[2]) / 77)
-			iArray.append((str(numval), (pixel[0],pixel[1],pixel[2])))
+			#numval = int((pixel[0] + pixel[1] + pixel[2]) / 77)
+			iArray.append((gsval, (pixel[0],pixel[1],pixel[2])))
 		jArray.append(iArray)
 	
 	# return txt image
